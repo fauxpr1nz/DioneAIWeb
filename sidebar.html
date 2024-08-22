@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="hover-area"></div>
+    <div class="sidebar">
+        <title>Dione AI Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #ffffff;
+            border-right: 1px solid #ddd;
+            padding-top: 20px;
+            position: fixed;
+            left: -250px;
+            transition: left 0.3s ease;
+            z-index: 2000;
+        }
+        .hover-area {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 100vh;
+            z-index: 1500;
+        }
+        .sidebar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 10px auto;
+            display: block;
+        }
+        .sidebar h4 {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .status-indicator {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .status-indicator .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: green;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .status-indicator span {
+            margin-left: 8px;
+            font-size: 0.9em;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px 20px;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar ul li a i {
+            margin-right: 10px;
+        }
+        .sidebar ul li a:hover {
+            background-color: #f5f5f5;
+        }
+        .main-content {
+            margin-left: 20px;
+            padding: 20px;
+        }
+    </style>
+        <img src="profile_image.jpg" alt="Profile Picture">
+        <h4>Umardiza's Workspace</h4>
+        <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span>Live Environment</span>
+        </div>
+        <ul>
+            <li><a href="#find-quiz"><i class="fas fa-search"></i> Find a quiz</a></li>
+            <li><a href="#my-quizzes"><i class="fas fa-file-alt"></i> My quizzes</a></li>
+            <li><a href="#reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            <li><a href="#classes"><i class="fas fa-users"></i> Classes</a></li>
+            <li><a href="#collections"><i class="fas fa-folder-open"></i> Collections</a></li>
+            <li><a href="#memes"><i class="fas fa-image"></i> Memes</a></li>
+            <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+        </ul>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const hoverArea = document.querySelector('.hover-area');
+
+        hoverArea.addEventListener('mouseenter', () => {
+            sidebar.style.left = '0';
+        });
+
+        sidebar.addEventListener('mouseleave', () => {
+            sidebar.style.left = '-250px';
+        });
+    </script>
+</body>
+</html>
